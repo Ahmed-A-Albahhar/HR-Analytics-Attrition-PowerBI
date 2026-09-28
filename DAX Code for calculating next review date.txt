@@ -1,0 +1,9 @@
+NextReviewDate = 
+FORMAT (
+    IF (
+        MAX ( FactPerformanceRating[ReviewDate] ) = BLANK (),
+        MAX ( DimEmployee[HireDate] ) + 365,
+        MAX ( FactPerformanceRating[ReviewDate] ) + 365
+    ),
+    "mm/dd/yyyy"
+)
